@@ -15,11 +15,25 @@ public class Card {
         return this.rank;
     }
 
+    public int getRankValue(){
+        return this.rank.getVal();
+    }
+
+    public void aceHightoLow(){
+            rank.setAceLow();
+    }
+
     public static void main(String[] args){
         Card card = new Card(Suit.CLUBS, Rank.ACE);
         System.out.println(card.getRank());
         System.out.println(card.getSuit());
-        System.out.println(card.getRank().getVal());
+        System.out.println(card.getRankValue());
+        card.aceHightoLow();
+        System.out.println(card.getRankValue());
+        Card card1 = new Card(Suit.SPADES, Rank.EIGHT);
+        System.out.println(card.getRankValue());
+        card1.aceHightoLow();
+        System.out.println(card.getRankValue());
 
     }
 

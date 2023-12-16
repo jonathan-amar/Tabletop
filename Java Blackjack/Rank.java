@@ -23,8 +23,10 @@ public enum Rank {
         return value;
     }
 
-    public void setVal(int i){
-        this.value = i;
+    public void setAceLow(){
+        if (value == 11){
+            value = 1;
+        };
     }
 
 }
