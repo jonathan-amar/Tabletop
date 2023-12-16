@@ -38,6 +38,10 @@ public class Deck {
         Collections.shuffle(deck);
     }
 
+    public ArrayList<Card> getDeck(){
+        return deck;
+    }
+
     public static void main (String[] args){
         // Deck deck = new Deck();
         // deck.shuffle();
