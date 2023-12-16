@@ -23,18 +23,23 @@ public class Card {
             rank.setAceLow();
     }
 
+    public void display(){
+        System.out.println(rank + " of " + suit);
+    }
+
     public static void main(String[] args){
         Card card = new Card(Suit.CLUBS, Rank.ACE);
         System.out.println(card.getRank());
         System.out.println(card.getSuit());
         System.out.println(card.getRankValue());
+        card.display();
         card.aceHightoLow();
         System.out.println(card.getRankValue());
         Card card1 = new Card(Suit.SPADES, Rank.EIGHT);
         System.out.println(card.getRankValue());
         card1.aceHightoLow();
         System.out.println(card.getRankValue());
-
+        card1.display();
     }
 
 }
