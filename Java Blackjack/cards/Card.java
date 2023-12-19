@@ -1,3 +1,4 @@
+package cards;
 public class Card {
     private Suit suit;
     private Rank rank;
@@ -41,5 +42,4 @@ public class Card {
         System.out.println(card.getRankValue());
         card1.display();
     }
-
 }

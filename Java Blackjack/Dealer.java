@@ -1,3 +1,6 @@
+import cards.BJDeck;
+import cards.Card;
+
 public class Dealer {
     BJDeck deck;
 
