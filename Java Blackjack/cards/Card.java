@@ -2,10 +2,12 @@ package cards;
 public class Card {
     private Suit suit;
     private Rank rank;
+    private int rankValue;
 
     public Card(Suit suit, Rank rank){
         this.suit = suit;
         this.rank = rank;
+        rankValue = rank.getVal();
     }
 
     public Suit getSuit(){
@@ -17,11 +19,15 @@ public class Card {
     }
 
     public int getRankValue(){
-        return this.rank.getVal();
+        return this.rankValue;
     }
 
-    public void aceHightoLow(){
-            rank.setAceLow();
+    public boolean aceHightoLow(){
+            if(rankValue == 11){
+                rankValue = 1;
+                return true;
+            }
+            return false;
     }
 
     public void display(){

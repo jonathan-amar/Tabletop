@@ -24,10 +24,4 @@ public enum Rank {
         return value;
     }
 
-    public void setAceLow(){
-        if (value == 11){
-            value = 1;
-        };
-    }
-
 }
