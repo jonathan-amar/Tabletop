@@ -14,18 +14,30 @@ public class Hand {
     public int getVal(){
         int handVal = 0;
         for(Card c : hand){
-            handVal = handVal + c.getRankValue();
+            handVal = handVal + c.getValue();
         }
         return handVal;
     }
 
     public void add(Card c){
         hand.add(c);
+        while(getVal() > 21 && hasHighAce()) {
+            aceToLow();
+        }
     }
 
-    public boolean aceToLow(){
-        for(int i = 0; i < hand.size(); i++){
-            if(hand.get(i).aceHightoLow()){
+    private boolean hasHighAce(){
+        for(Card c : hand){
+            if (c.getValue() == 11) {
+                return true;
+            } 
+        }
+        return false;
+    }
+
+    private boolean aceToLow(){
+        for(Card c : hand){
+            if(c.aceHightoLow()){
                 return true;
             }
         }
@@ -38,16 +50,12 @@ public class Hand {
 
     public static void main(String[] args) {
         Hand hand = new Hand();
-        hand.add(new Card(Suit.CLUBS, Rank.ACE));
         hand.add(new Card(Suit.CLUBS, Rank.FIVE));
         hand.add(new Card(Suit.CLUBS, Rank.FIVE));
-        hand.add(new Card(Suit.CLUBS, Rank.FIVE));
+        System.out.println(hand.getVal());
         hand.add(new Card(Suit.SPADES,Rank.ACE));
         System.out.println(hand.getVal());
-        hand.aceToLow();
-        System.out.println(hand.getVal());
-        hand.clearHand();
-        System.out.println(hand.getVal());
+    
     }
 
 }

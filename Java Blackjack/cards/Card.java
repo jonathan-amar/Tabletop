@@ -18,7 +18,7 @@ public class Card {
         return this.rank;
     }
 
-    public int getRankValue(){
+    public int getValue(){
         return this.rankValue;
     }
 
