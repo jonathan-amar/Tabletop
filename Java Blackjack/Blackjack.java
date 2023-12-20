@@ -2,7 +2,6 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import cards.BJDeck;
-import cards.Hand;
 
 public class Blackjack {
     private static BJDeck deck;
@@ -94,7 +93,7 @@ public class Blackjack {
     }
 
 
-    public static void main(String[] args){
+    public static void blackJack(){
         deck = new BJDeck();
         p = new Player();
         house = new HandHolder();
