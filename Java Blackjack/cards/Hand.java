@@ -35,6 +35,10 @@ public class Hand {
         return false;
     }
 
+    public boolean isBust(){
+        return getVal() > 21;
+    }
+
     private boolean aceToLow(){
         for(Card c : hand){
             if(c.aceHightoLow()){
@@ -60,7 +64,9 @@ public class Hand {
             if(i < cardNum)
             System.out.print(hand.get(i).displayChar());
             else System.out.print(" ");
-            
+            if(hand.get(i).getRank() == Rank.TEN && i < cardNum)
+            System.out.print("|  ");
+            else
             System.out.print(" |  "  );
         }
             System.out.println();

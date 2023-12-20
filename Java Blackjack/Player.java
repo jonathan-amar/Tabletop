@@ -20,8 +20,13 @@ public class Player extends HandHolder{
         credits = credits - creds;
     }
 
-    public void bet(int creds){
+    public int bet(int creds){
         removeCredits(creds);
+        return creds;
+    }
+
+    public void addCredits(int creds){
+        credits = credits + creds;
     }
 
     public static void main(String[] args){

@@ -28,5 +28,9 @@ public class HandHolder {
         hand.showSomeCards(1);
     }
 
+    public boolean isBust(){
+        return hand.isBust();
+    }
+
 
 }
