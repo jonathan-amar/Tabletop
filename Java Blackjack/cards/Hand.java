@@ -45,19 +45,19 @@ public class Hand {
     }
 
     public void showHand() {
-        for (Card c : hand)
+        for (int i = 0; i < hand.size(); i++)
             System.out.print("_____  ");
             System.out.println();
-        for (Card c : hand)
+        for (int i = 0; i < hand.size(); i++)
             System.out.print("|   |  ");
             System.out.println();
         for (Card c : hand)
             System.out.print("| " + c.displayChar() + " |  "  );
             System.out.println();
-        for (Card c : hand)
+        for (int i = 0; i < hand.size(); i++)
             System.out.print("|   |  ");
             System.out.println();
-        for (Card c : hand)
+        for (int i = 0; i < hand.size(); i++)
             System.out.print("-----  ");
             System.out.println();
             System.out.println();
@@ -78,6 +78,8 @@ public class Hand {
         System.out.println(hand.getVal());
         hand.add(new Card(Suit.SPADES,Rank.ACE));
         System.out.println(hand.getVal());
+        hand.add(new Card(Suit.DIAMONDS, Rank.QUEEN));
+        hand.add(new Card(Suit.DIAMONDS, Rank.NINE));
         hand.showHand();
     }
 
