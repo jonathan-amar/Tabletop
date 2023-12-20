@@ -45,14 +45,24 @@ public class Hand {
     }
 
     public void showHand() {
+        showSomeCards(hand.size());
+    }
+
+    public void showSomeCards(int cardNum) {
         for (int i = 0; i < hand.size(); i++)
             System.out.print("_____  ");
             System.out.println();
         for (int i = 0; i < hand.size(); i++)
             System.out.print("|   |  ");
             System.out.println();
-        for (Card c : hand)
-            System.out.print("| " + c.displayChar() + " |  "  );
+        for(int i = 0; i < hand.size(); i++){
+            System.out.print("| ");
+            if(i < cardNum)
+            System.out.print(hand.get(i).displayChar());
+            else System.out.print(" ");
+            
+            System.out.print(" |  "  );
+        }
             System.out.println();
         for (int i = 0; i < hand.size(); i++)
             System.out.print("|   |  ");

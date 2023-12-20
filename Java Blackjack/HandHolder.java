@@ -12,7 +12,7 @@ public class HandHolder {
         return hand.getVal();
     }
 
-    public void addCard(Card c){
+    public void deal(Card c){
         hand.add(c);
     }
 
@@ -22,6 +22,10 @@ public class HandHolder {
 
     public void showHand() {
         hand.showHand();
+    }
+
+    public void showTopCard(){
+        hand.showSomeCards(1);
     }
 
 

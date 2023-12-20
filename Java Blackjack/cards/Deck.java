@@ -31,6 +31,10 @@ public class Deck {
         return deck.size();
     }
 
+    public void discard(){
+        deck.removeFirst();
+    }
+
     public Card draw(){
         return deck.removeFirst();
     }
