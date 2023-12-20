@@ -44,6 +44,29 @@ public class Hand {
         return false;
     }
 
+    public void showHand() {
+        for (Card c : hand)
+            System.out.print("_____  ");
+            System.out.println();
+        for (Card c : hand)
+            System.out.print("|   |  ");
+            System.out.println();
+        for (Card c : hand)
+            System.out.print("| " + c.displayChar() + " |  "  );
+            System.out.println();
+        for (Card c : hand)
+            System.out.print("|   |  ");
+            System.out.println();
+        for (Card c : hand)
+            System.out.print("-----  ");
+            System.out.println();
+            System.out.println();
+    }
+
+    public int getNumCards(){
+        return hand.size();
+    }
+
     public void clearHand(){
         hand.clear();
     }
@@ -55,7 +78,7 @@ public class Hand {
         System.out.println(hand.getVal());
         hand.add(new Card(Suit.SPADES,Rank.ACE));
         System.out.println(hand.getVal());
-    
+        hand.showHand();
     }
 
 }
