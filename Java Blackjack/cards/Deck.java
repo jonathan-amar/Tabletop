@@ -2,66 +2,79 @@ package cards;
 import java.util.ArrayList;
 import java.util.Collections;
 
+/**
+ * Represents a deck of playing cards. Includes functionality for drawing and discarding cards.
+ *
+ * @author Jonathan Amar
+ * @version 1.0
+ * @since 1.0
+ */
 public class Deck {
     private ArrayList<Card> deck;
 
-    public Deck(){
-        if (deck == null)
-        deck = new ArrayList<Card>();
-        for(Suit s : Suit.values()){
-            for(Rank r : Rank.values()){
-                deck.add(new Card(s, r));
+    /**
+     * Constructs a deck with standard playing cards.
+     */
+    public Deck() {
+        this(1);
+    }
+
+    /**
+     * Constructs a deck with a specified number of standard playing card decks.
+     *
+     * @param numDecks The number of decks to include in the combined deck.
+     */
+    public Deck(int numDecks) {
+        if (deck == null) {
+            deck = new ArrayList<Card>();
+            for (int i = 0; i < numDecks; i++) {
+                for (Suit s : Suit.values()) {
+                    for (Rank r : Rank.values()) {
+                        deck.add(new Card(s, r));
+                    }
+                }
             }
         }
     }
 
-    public Deck(int numDecks){
-        if (deck == null)
-        deck = new ArrayList<Card>();
-        for(int i = 0; i < numDecks; i++){
-            for(Suit s : Suit.values()){
-            for(Rank r : Rank.values()){
-                deck.add(new Card(s, r));
-            }
-        }
-        }
-    }
-
-    public int numCards(){
+    /**
+     * Gets the number of cards in the deck.
+     *
+     * @return The number of cards in the deck.
+     */
+    public int numCards() {
         return deck.size();
     }
 
-    public void discard(){
-        deck.removeFirst();
+    /**
+     * Discards the top card from the deck.
+     */
+    public void discard() {
+        deck.remove(0);
     }
 
-    public Card draw(){
-        return deck.removeFirst();
+    /**
+     * Draws the top card from the deck.
+     *
+     * @return The top card from the deck.
+     */
+    public Card draw() {
+        return deck.remove(0);
     }
 
-    public void shuffle(){
+    /**
+     * Shuffles the cards in the deck.
+     */
+    public void shuffle() {
         Collections.shuffle(deck);
     }
 
-    public ArrayList<Card> getDeck(){
+    /**
+     * Gets the entire deck of cards.
+     *
+     * @return The ArrayList containing all cards in the deck.
+     */
+    public ArrayList<Card> getDeck() {
         return deck;
-    }
-
-    public static void main (String[] args){
-        // Deck deck = new Deck();
-        // deck.shuffle();
-        // System.out.println(deck.numCards());
-        // while(deck.numCards()!=0){
-        //     deck.draw().display();
-        // }
-        // System.out.println(deck.numCards());
-
-        Deck deck2 = new Deck(6);
-        System.out.println(deck2.numCards());
-        deck2.shuffle();
-        while(deck2.numCards()!=0){
-             deck2.draw().display();
-         }
-        
     }
 }

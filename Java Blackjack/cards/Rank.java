@@ -1,5 +1,16 @@
 package cards;
+
+/**
+ * Enumeration representing the ranks of playing cards.
+ *
+ * Each rank has an associated numerical value used in card games.
+ *
+ * @author Jonathan Amar
+ * @version 1.0
+ * @since 1.0
+ */
 public enum Rank {
+
     ACE(11),
     TWO(2),
     THREE(3),
@@ -16,12 +27,21 @@ public enum Rank {
 
     private int value;
 
-    private Rank(int value){
+    /**
+     * Constructs a Rank with the specified numerical value.
+     *
+     * @param value The numerical value associated with the rank.
+     */
+    private Rank(int value) {
         this.value = value;
     }
 
-    public int getVal(){
+    /**
+     * Gets the numerical value associated with the rank.
+     *
+     * @return The numerical value of the rank.
+     */
+    public int getVal() {
         return value;
     }
-
 }
